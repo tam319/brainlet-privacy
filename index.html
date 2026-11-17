@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brainlet privacy policy</title>
+<meta name="description" content="What Brainlet does with what you write: notes stay on your phone, and nothing leaves it unless you ask.">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #f6f3ec;
+    --paper: #ffffff;
+    --ink: #1d2a2a;
+    --muted: #4f5d5c;
+    --rule: #dcd6c8;
+    --accent: #0f6f6a;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #101716;
+      --paper: #18211f;
+      --ink: #e8eeec;
+      --muted: #a9b6b3;
+      --rule: #2c3836;
+      --accent: #6fd3c9;
+    }
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+  main {
+    max-width: 44rem;
+    margin: 0 auto;
+    padding: 2.5rem 1rem 4rem;
+  }
+  article {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 18px;
+    padding: 2rem clamp(1rem, 4vw, 2.5rem);
+  }
+  h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 .25rem; }
+  h2 { font-size: 1.2rem; margin: 2.2rem 0 .6rem; padding-top: 1.2rem; border-top: 1px solid var(--rule); }
+  p, li { margin: 0 0 .8rem; }
+  ol, ul { padding-left: 1.3rem; }
+  .date { color: var(--muted); margin-bottom: 1.5rem; }
+  .lede { font-size: 1.05rem; }
+  a { color: var(--accent); }
+  strong { font-weight: 650; }
+  footer { color: var(--muted); font-size: .9rem; text-align: center; margin-top: 1.5rem; }
+</style>
+</head>
+<body>
+<main>
+<article>
+<h1>Brainlet — privacy policy</h1>
+<p class="date">Effective date: 17 November 2026</p>
+
+<p>Brainlet is a memory app. You type a thought, it is written down, and later you can ask for it back. This policy says exactly what happens to what you write.</p>
+<p class="lede">The short version: your notes live on your phone. Nothing leaves it unless you ask, and the one time a note can leave — sending it to an AI provider you chose — Brainlet asks first.</p>
+
+<h2>What is stored, and where</h2>
+<p>Your notes, the people and things they mention, the times they refer to, the tasks they create, calendar proposals and the search index built from them are stored in a single database <strong>on your phone</strong>. There is no Brainlet account, no Brainlet server, and no copy of your notes anywhere else unless you make one yourself.</p>
+<p>API keys you enter for an AI provider are encrypted with a key held in Android's Keystore. They are never included in any backup.</p>
+
+<h2>Work that happens on your phone</h2>
+<ul>
+  <li><strong>Understanding notes.</strong> Notes are read by rules built into the app and, if you download one, by a language model that runs on the phone. Neither sends anything anywhere.</li>
+  <li><strong>Search by meaning.</strong> To find notes that mean the same thing in different words, Brainlet turns each note into a list of numbers (an “embedding”) with a small model that runs on the phone. Those numbers stay in the same on-phone database as the notes.</li>
+  <li><strong>Answers.</strong> When you ask a question, the answer is built from your own notes, on the phone, and shows the notes it came from.</li>
+</ul>
+
+<h2>What leaves your phone</h2>
+<p><strong>Nothing, unless you ask for it.</strong> These are the only cases:</p>
+<ol>
+  <li><strong>Sending one note to an AI provider — optional, and only with your consent.</strong> If you add your own key for OpenRouter, OpenAI or DeepSeek in Settings, you can choose to have one note read by that provider. The first time you do this for a provider, Brainlet shows a dialog naming it and explaining that the note's text will leave the phone and be handled under that provider's own terms and privacy policy. Nothing is sent unless you agree. After that, the text of the note you chose and the time you wrote it go to that provider, over HTTPS, under your own account. No other note is sent, and nothing is sent in the background. You can withdraw consent in Settings at any time; deleting the key withdraws it too. If a request fails, the note is still saved and read on the phone instead.</li>
+  <li><strong>Downloading an on-device model — no notes involved.</strong> If you choose to download a model in Settings, Brainlet fetches the model file from Hugging Face. That request asks for a file; it contains none of your notes. As with any download, Hugging Face sees your device's IP address. Downloads use Wi-Fi only.</li>
+  <li><strong>Calendar.</strong> When a note mentions a time, Brainlet may offer to add it to your calendar. It asks for calendar permission only the first time you tap <strong>Add</strong>. Once you have allowed it, Brainlet reads your calendars on the phone for two things: to find one it may write to, and, when it offers an event, to look for a similar event already there so it does not suggest a duplicate. It writes an event only when you tap <strong>Add</strong>, and only that one event, using Android's calendar provider. Nothing read from your calendar leaves the phone; your calendar is synced by whichever account owns it, not by Brainlet.</li>
+  <li><strong>Purchases.</strong> If you buy the one-time unlock, Google Play processes the purchase. Brainlet learns only whether the purchase exists; it never sees your payment details.</li>
+  <li><strong>Backups.</strong> When you choose <strong>Back up notes</strong>, Brainlet writes a file to the place you pick. If you pick a cloud folder, that provider stores it under your account. Brainlet does not upload anything itself.</li>
+  <li><strong>Reporting an answer.</strong> If you tap <strong>Report this answer</strong>, Brainlet opens your own email app with the question and answer filled in, addressed to the contact below. Nothing is sent unless you press Send, and you can edit or delete any of it first.</li>
+</ol>
+<p>Brainlet contains no analytics, no advertising, no crash reporting and no tracking of any kind. Android's own cloud backup is turned off for this app, so your notes are not copied to Google's servers by the operating system either.</p>
+
+<h2>The home-screen widget</h2>
+<p>The widget reads the same on-phone database to show the single nearest thing that is due, and, once a task's date has passed, asks whether it is done. It displays what is already on your phone; it sends nothing anywhere.</p>
+
+<h2>What is not collected</h2>
+<p>Brainlet does not collect your name, email address, contacts, location, device identifiers or usage statistics. It has no servers to send them to.</p>
+
+<h2>Your control over it</h2>
+<ul>
+  <li><strong>Delete a note</strong> and it disappears from the library, from search and from answers. A small record that the note was deleted (without its text) is kept, so that restoring a backup cannot bring it back.</li>
+  <li><strong>Withdraw cloud consent</strong> for a provider in Settings, or delete its key. Brainlet will ask again before any later send. A note already sent to a provider is held by that provider under its terms; Brainlet cannot delete it there, so contact the provider.</li>
+  <li><strong>Remove a downloaded model</strong> in Settings.</li>
+  <li><strong>Uninstall the app</strong> and Android deletes the database, the keys and everything else Brainlet stored on the phone.</li>
+  <li><strong>Backups</strong> are files you own, in a place you chose. Deleting the file deletes the backup.</li>
+</ul>
+
+<h2>Children</h2>
+<p>Brainlet is not directed at children and collects nothing from anyone.</p>
+
+<h2>Changes</h2>
+<p>If this policy changes, the new version will be published at the same address and the date above will change.</p>
+
+<h2>Contact</h2>
+<p>Questions, or a request about your data: <a href="mailto:lumbaobao@gmail.com"><strong>lumbaobao@gmail.com</strong></a></p>
+</article>
+<footer>Brainlet · com.brainlet.myapp</footer>
+</main>
+</body>
+</html>
